@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Morris Board</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="CommonScripts/kinetic-v3.9.8.js"></script>
+        <script type="text/javascript" src="MorrisScripts/MorrisBoard.js"></script>
+    </head>
+    <body>
+        <div style="text-align: center" id="container" ></div>
+    </body>
+    
+    <script type="text/javascript">
+        try {
+
+                    // create the board
+
+                    b = new MorrisBoard("container",600,600);
+
+                    // set initial board state
+                    var board = [];
+
+                    for( var i = 0 ; i < 7 * 7 ; i++ )
+                        board[i] = 0x02;
+                    
+                    b.Update( board, {White:7,Black:7} );
+
+                    // save last hand
+
+                    //lastHand = event.data.hand;
+
+                    // get the initial state of the game [ LIGHT_MOVE or DARK_MOVE depending on who goes first ]
+
+
+                }
+                catch ( e ) {
+
+                    window.alert( "Sorry your browser does not have the\ncapabilities required to run this program.\n\nThis program is optimized for the Chrome browser from Google.")
+                }
+    </script>
+</html>
